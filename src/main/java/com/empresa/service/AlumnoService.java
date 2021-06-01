@@ -12,7 +12,7 @@ public interface AlumnoService {
 	public abstract Optional<Alumno> obtienePorId(int idAlumno);
 	public abstract void eliminaAlumno(int id);
 	public abstract List<Alumno> listaAlumnoPorNombreLike(String filtro);
-	public abstract List<Alumno> listaPorDni(String dni);
+	public abstract Optional<Alumno>  listaPorDni(String dni);
 	public abstract List<Alumno> listaPorDni(String dni, int idAlumno);
 	
 }
