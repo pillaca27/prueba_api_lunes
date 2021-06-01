@@ -55,13 +55,9 @@ public class AlumnoController {
 	}
 	@GetMapping("/porDni/{dni}")
 	@ResponseBody
-	public ResponseEntity<Alumno> listaPorDni(@PathVariable("dni") String dni){
-		Optional<Alumno> optAlumno =  service.listaPorDni(dni);
-		if (optAlumno.isPresent()) {
-			return ResponseEntity.ok(optAlumno.get());	
-		}else {
-			return ResponseEntity.notFound().build();
-		}
+	public ResponseEntity<List<Alumno>> listaPorDni(@PathVariable("dni") String dni){
+		List<Alumno> lista =  service.listaPorDni(dni);
+			return ResponseEntity.ok(lista);	
 	}
 	
 	@PostMapping
